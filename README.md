@@ -1,2 +1,1 @@
-# InveSoft
-VBIS-Projekat
+# vbis-2024
