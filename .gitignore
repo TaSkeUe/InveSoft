@@ -79,3 +79,5 @@ fabric.properties
 #custom
 .idea/**
 .idea/
+
+DbConnection.php
