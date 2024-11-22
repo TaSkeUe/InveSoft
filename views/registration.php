@@ -15,6 +15,30 @@ use app\models\RegistrationModel;
     <div class="card-body">
         <form role="form" method="post" action="/processRegistration">
             <div class="mb-3">
+                <input type="text" name="ime" class="form-control form-control-lg" placeholder="Name" aria-label="Email" value="<?php echo $params->ime ?>">
+                <?php
+                if ($params != null && $params->errors != null) {
+                    foreach ($params->errors as $attribute => $error) {
+                        if ($attribute == 'ime') {
+                            echo "<span class='text-danger'>$error[0]</span>";
+                        }
+                    }
+                }
+                ?>
+            </div>
+            <div class="mb-3">
+                <input type="text" name="prezime" class="form-control form-control-lg" placeholder="Surname" aria-label="Email" value="<?php echo $params->prezime ?>">
+                <?php
+                if ($params != null && $params->errors != null) {
+                    foreach ($params->errors as $attribute => $error) {
+                        if ($attribute == 'prezime') {
+                            echo "<span class='text-danger'>$error[0]</span>";
+                        }
+                    }
+                }
+                ?>
+            </div>
+            <div class="mb-3">
                 <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email" value="<?php echo $params->email ?>">
                 <?php
                 if ($params != null && $params->errors != null) {

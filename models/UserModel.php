@@ -7,33 +7,33 @@ use app\core\DbConnection;
 
 class UserModel extends BaseModel
 {
-    public int $id;
+    public int $korisnikID;
+    public string $ime = '';
+    public string $prezime = '';
 
     public string $email = '';
-    public string $first_name = '';
-    public string $last_name = '';
 
     public function tableName(): string
     {
-        return "users";
+        return "korisnici";
     }
 
     public function readColumns(): array
     {
-        return ["id", "email", "first_name", "last_name"];
+        return ["korisnikID", "ime", "prezime", "email"];
     }
 
     public function editColumns(): array
     {
-        return ["email", "first_name", "last_name"];
+        return ["email", "ime", "prezime"];
     }
 
     public function validationRules(): array
     {
         return [
             "email" => [self::RULE_REQUIRED, self::RULE_EMAIL],
-            "first_name" => [self::RULE_REQUIRED],
-            "last_name" => [self::RULE_REQUIRED],
+            "ime" => [self::RULE_REQUIRED],
+            "prezime" => [self::RULE_REQUIRED],
         ];
     }
 }

@@ -7,18 +7,18 @@ use app\core\BaseModel;
 class SessionUserModel extends BaseModel
 {
     public int $id;
-    public int $id_user;
-    public  $first_name;
-    public $last_name;
+    public int $korisnikID;
+    public string $ime;
+    public string $prezime;
     public string $email;
-    public string $role;
+    public string $rola;
 
     public function getSessionData()
     {
-        $query = "select u.id as id_user, u.first_name, u.last_name, u.email, r.name as role from user_roles ur
-left join users u on ur.id_user = u.id
-left join roles r on ur.id_role = r.id
-where u.email = '$this->email'";
+        $query = "select korisnici.korisnikID as korisnikID, korisnici.ime, korisnici.prezime, korisnici.email, role.ime as rola from korisnik_role
+        left join korisnici on korisnik_role.korisnikID = korisnici.korisnikID
+        left join role on korisnik_role.rolaID = role.rolaID
+        where korisnici.email = '$this->email'";
 
         $dbResult = $this->con->query($query);
 

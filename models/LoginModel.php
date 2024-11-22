@@ -6,18 +6,18 @@ use app\core\BaseModel;
 
 class LoginModel extends BaseModel
 {
-    public int $id;
+    public int $korisnikID;
     public string $email = '';
     public string $password = '';
 
     public function tableName(): string
     {
-        return 'users';
+        return 'korisnici';
     }
 
     public function readColumns(): array
     {
-        return ['id', 'email', 'password'];
+        return ['korisnikID', 'email', 'password'];
     }
 
     public function editColumns()

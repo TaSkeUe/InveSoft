@@ -6,23 +6,25 @@ use app\core\BaseModel;
 
 class RegistrationModel extends BaseModel
 {
-    public int $id;
+    public int $korisnikID;
+    public string $ime = '';
+    public string $prezime = '';
     public string $email = '';
     public string $password = '';
 
     public function tableName(): string
     {
-        return 'users';
+        return 'korisnici';
     }
 
     public function readColumns(): array
     {
-        return ['id', 'email', 'password'];
+        return ['korisnikID', 'ime', 'prezime', 'email', 'password'];
     }
 
     public function editColumns()
     {
-        return ['email', 'password'];
+        return ['ime', 'prezime', 'email', 'password'];
     }
 
     public function validationRules(): array

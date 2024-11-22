@@ -7,28 +7,28 @@ use app\core\BaseModel;
 
 class RoleModel extends BaseModel
 {
-    public int $id;
-    public string $name;
+    public int $rolaID;
+    public string $ime;
 
     public function tableName()
     {
-        return 'roles';
+        return 'role';
     }
 
     public function readColumns()
     {
-        return ['id', 'name'];
+        return ['rolaID', 'ime'];
     }
 
     public function editColumns()
     {
-        return ['name'];
+        return ['ime'];
     }
 
     public function validationRules()
     {
         return [
-            "name" => [self::RULE_REQUIRED]
+            "ime" => [self::RULE_REQUIRED]
         ];
     }
 }

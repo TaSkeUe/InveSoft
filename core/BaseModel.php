@@ -140,7 +140,7 @@ abstract class BaseModel
 
     public function checkUniqueEmail($email)
     {
-        $query = "select email from users where email = '$email'";
+        $query = "select email from korisnici where email = '$email'";
 
         $dbResult = $this->con->query($query);
         $result = $dbResult->fetch_assoc();
