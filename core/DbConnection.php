@@ -13,3 +13,4 @@ class DbConnection
         return $mysqli;
     }
 }
+#Baza
